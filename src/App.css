@@ -21,3 +21,18 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+/* responsive classes */
+
+@media (max-width: 768px) {
+  .chart-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .view-header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

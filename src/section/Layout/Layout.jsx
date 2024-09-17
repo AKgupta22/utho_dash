@@ -8,15 +8,24 @@ const { Content } = Layout;
 
 const AppLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [showCollapedBtn, setShowCollapedBtn] = useState(true);
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
   return (
     <Layout>
-      <AsideBar collapsed={collapsed} />
+      <AsideBar
+        collapsed={collapsed}
+        setCollapsed={setCollapsed}
+        setShowCollapedBtn={setShowCollapedBtn}
+      />
       <Layout>
-        <HeaderBar collapsed={collapsed} setCollapsed={setCollapsed} />
+        <HeaderBar
+          collapsed={collapsed}
+          setCollapsed={setCollapsed}
+          showCollapedBtn={showCollapedBtn}
+        />
         <Content
           style={{
             margin: "24px 16px",

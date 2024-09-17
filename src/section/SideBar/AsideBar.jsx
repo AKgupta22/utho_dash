@@ -12,7 +12,7 @@ import { useMemo } from "react";
 
 const { Sider } = Layout;
 
-const AsideBar = ({ collapsed }) => {
+const AsideBar = ({ collapsed, setCollapsed, setShowCollapedBtn }) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
@@ -27,7 +27,18 @@ const AsideBar = ({ collapsed }) => {
   };
 
   return (
-    <Sider trigger={null} collapsible collapsed={collapsed}>
+    <Sider
+      breakpoint="sm"
+      onBreakpoint={(broken) => {
+        if (broken) {
+          setShowCollapedBtn(false);
+          setCollapsed(true);
+        } else setShowCollapedBtn(true);
+      }}
+      trigger={null}
+      collapsible
+      collapsed={collapsed}
+    >
       <div className="logo-container">
         <img src={logoUrl} alt="logo" className="logo-container_logo" />
       </div>

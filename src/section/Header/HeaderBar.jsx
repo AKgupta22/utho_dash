@@ -5,7 +5,7 @@ import { useState } from "react";
 import ViewProfile from "../../view/Profile/ViewProfile";
 const { Header } = Layout;
 
-const HeaderBar = ({ collapsed, setCollapsed }) => {
+const HeaderBar = ({ collapsed, setCollapsed, showCollapedBtn }) => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -25,16 +25,21 @@ const HeaderBar = ({ collapsed, setCollapsed }) => {
           align="center"
           style={{ paddingRight: "1rem" }}
         >
-          <Button
-            type="text"
-            icon={collapsed ? <ArrowRightOutlined /> : <ArrowLeftOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{
-              fontSize: "16px",
-              width: 64,
-              height: 64,
-            }}
-          />
+          {showCollapedBtn ? (
+            <Button
+              type="text"
+              icon={collapsed ? <ArrowRightOutlined /> : <ArrowLeftOutlined />}
+              onClick={() => setCollapsed(!collapsed)}
+              style={{
+                fontSize: "16px",
+                width: 64,
+                height: 64,
+              }}
+            />
+          ) : (
+            <span />
+          )}
+
           <MenuDropDown setOpenModal={setOpenModal} />
         </Flex>
       </Header>

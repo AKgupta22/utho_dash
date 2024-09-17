@@ -11,7 +11,7 @@ import { sericeGrowthConfig, userGrowthConfig } from "../../utils/constant";
 
 const Dashboard = () => {
   return (
-    <Flex align="center" gap="2rem">
+    <Flex align="center" gap="2rem" className="chart-container">
       <ChartHeaderWrapper title="Hosting services growth by month">
         <Suspense fallback={<Skeleton active />}>
           <SimpleBarChart config={sericeGrowthConfig} />

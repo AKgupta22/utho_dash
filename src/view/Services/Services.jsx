@@ -64,7 +64,7 @@ const Services = () => {
   return (
     <>
       <div>
-        <Flex align="center" justify="space-between">
+        <Flex align="baseline" justify="space-between" className="view-header-container">
           <Typography.Title level={4}>Services</Typography.Title>
           <Button type="primary" onClick={()=>handleOpenDrawer(null)}>Add Service</Button>
         </Flex>
