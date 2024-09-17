@@ -1,0 +1,9 @@
+.logo-container {
+    padding: 16px 12px;
+}
+
+.logo-container .logo-container_logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
